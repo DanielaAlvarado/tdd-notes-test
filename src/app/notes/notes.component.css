@@ -1,0 +1,27 @@
+.notes{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding-top: 8.5vh;
+    min-height: 91.5vh;
+}
+
+.notes__grid{
+    justify-content: center;
+}
+
+.notes__note{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+
+    cursor: pointer;
+}
+
+.notes__add{
+    position: fixed;
+    bottom: 3vh;
+    right: 3vh;
+}

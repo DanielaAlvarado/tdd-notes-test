@@ -1,0 +1,20 @@
+.user__header{
+    height: 8.5vh;
+}
+
+.user__profile{
+    display: flex;
+
+    padding-top: 1vh;
+}
+
+.user__picture{
+    flex: 0 0 80px;
+
+    height: 80px;
+    width: 80px;
+    margin-right: 16px;
+
+    border-radius: 50%;
+    object-fit: cover;
+}

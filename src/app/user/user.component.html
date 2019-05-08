@@ -1,0 +1,36 @@
+<header class="user__header mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <i class="material-icons mdc-top-app-bar__navigation-icon" (click)="openDrawer()" id="menu">menu</i>
+            <span class="mdc-top-app-bar__title" id="page-title">{{title}}</span>
+        </section>
+    </div>
+</header>
+<aside class="mdc-drawer mdc-drawer--modal">
+    <div class="user__profile mdc-drawer__header">
+        <img class="user__picture" [src]="user.image" *ngIf="user.image" alt="User image">
+        <img class="user__picture" src="https://via.placeholder.com/400x300" *ngIf="!user.image" alt="User image">
+        <div class="user__data">
+            <h3 class="mdc-drawer__title" id="name">{{user.name}}</h3>
+            <h6 class="mdc-drawer__subtitle" *ngIf="user.provider == 'password'">tdd-notes user</h6>
+            <h6 class="mdc-drawer__subtitle" *ngIf="user.provider != 'password'">{{user.provider}} user</h6>
+        </div>
+    </div>
+    <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+            <div routerLink="/notes" class="mdc-list-item mdc-list-item--activated" aria-current="page">
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">notes</i>
+                <span class="mdc-list-item__text">Notes</span>
+            </div>
+            <div class="mdc-list-item">
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
+                <span class="mdc-list-item__text">About</span>
+            </div>
+            <div class="mdc-list-item" (click)="logout()" id="logout">
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">power_settings_new</i>
+                <span class="mdc-list-item__text">Logout</span>
+            </div>
+        </nav>
+    </div>
+</aside>
+<div class="mdc-drawer-scrim"></div>
