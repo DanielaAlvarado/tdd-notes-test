@@ -1,0 +1,41 @@
+.create-note{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding-top: 8.5vh;
+    min-height: 91.5vh;
+}
+
+.create-note__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 80vh;
+
+    width: 60%;
+    padding: 3vh 3%;
+}
+
+.create-note__content{
+    height: 50vh;
+    resize: none;
+}
+
+.create-note__color{
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+}
+
+.create-note__buttons{
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-between;
+
+    width: 25%;
+}

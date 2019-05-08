@@ -6,6 +6,7 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {NotesComponent} from './notes/notes.component';
 import {UserResolver} from './user/user.resolver';
+import {CreateNoteComponent} from './create-note/create-note.component';
 
 const routes: Routes = [
     {
@@ -26,6 +27,13 @@ const routes: Routes = [
     {
         path: 'notes',
         component: NotesComponent,
+        resolve: {
+            data: UserResolver
+        }
+    },
+    {
+        path: 'create-note',
+        component: CreateNoteComponent,
         resolve: {
             data: UserResolver
         }

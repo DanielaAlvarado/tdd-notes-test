@@ -1,1 +1,12 @@
 <app-user [title]="'Notes'"></app-user>
+<div class="notes">
+    <ul class="notes__grid mdc-image-list my-image-list">
+        <li routerLink="/note/{{item.payload.doc.id}}" class="notes__note mdc-image-list__item" *ngFor="let item of items" [ngStyle]="{'background-color':item.payload.doc.data().color}">
+            <h6 class="mdc-typography--headline6">{{item.payload.doc.data().title}}</h6>
+            <p class="mdc-typography--body2">{{item.payload.doc.data().content | truncate : 150 : '...'}}</p>
+        </li>
+    </ul>
+</div>
+<button routerLink="/create-note" class="notes__add mdc-fab" aria-label="Favorite">
+    <span class="mdc-fab__icon material-icons">add</span>
+</button>

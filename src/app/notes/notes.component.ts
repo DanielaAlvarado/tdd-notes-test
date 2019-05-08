@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import {FirebaseService} from '../firebase.service'
 
 @Component({
     selector: 'app-notes',
@@ -9,8 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class NotesComponent implements OnInit {
     items: Array<any>;
 
-    constructor(){}
+    constructor(
+        public firebaseService: FirebaseService
+    ){}
 
     ngOnInit(){
+        this.getData();
+    }
+
+    getData(){
+        this.firebaseService.getNotes().subscribe((res) => {
+            this.items = res;
+        });
     }
 }
