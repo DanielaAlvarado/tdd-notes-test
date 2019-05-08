@@ -1,0 +1,18 @@
+<app-user [title]="'Read note'"></app-user>
+<div class="note">
+    <div class="note__note mdc-card" [ngStyle]="{'background-color':item.color}" id="card">
+        <div class="note__content">
+            <h3 class="note__title mdc-typography--headline3" id="title">{{item.title}}</h3>
+            <p class="mdc-typography--body1" id="content">{{item.content}}</p>
+        </div>
+        <div class="mdc-card__actions mdc-theme--surface">
+            <div class="mdc-card__action-buttons">
+                <button routerLink="/notes" class="mdc-button mdc-card__action mdc-card__action--button">Back</button>
+            </div>
+            <div class="mdc-card__action-icons">
+                <button routerLink='/edit-note/{{item.id}}' class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" id="edit">edit</button>
+                <button (click)="delete()" class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" id="delete">delete</button>
+            </div>
+        </div>
+    </div>
+</div>

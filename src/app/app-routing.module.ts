@@ -7,6 +7,9 @@ import {RegisterComponent} from './register/register.component';
 import {NotesComponent} from './notes/notes.component';
 import {UserResolver} from './user/user.resolver';
 import {CreateNoteComponent} from './create-note/create-note.component';
+import {NoteComponent} from './note/note.component';
+import {NoteResolver} from './note/note.resolver';
+import {EditNoteComponent} from './edit-note/edit-note.component';
 
 const routes: Routes = [
     {
@@ -36,6 +39,22 @@ const routes: Routes = [
         component: CreateNoteComponent,
         resolve: {
             data: UserResolver
+        }
+    },
+    {
+        path: 'note/:id',
+        component: NoteComponent,
+        resolve: {
+            data: UserResolver,
+            note: NoteResolver
+        }
+    },
+    {
+        path: 'edit-note/:id',
+        component: EditNoteComponent,
+        resolve: {
+            data: UserResolver,
+            note: NoteResolver
         }
     }
 ];

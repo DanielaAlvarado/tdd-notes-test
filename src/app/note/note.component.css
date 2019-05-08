@@ -1,0 +1,38 @@
+.note{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding-top: 8.5vh;
+    min-height: 91.5vh;
+}
+
+.note__note{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 60%;
+}
+
+.note__content{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70vh;
+
+    padding: 3vh 3%;
+
+    overflow-y: auto;
+}
+
+.note__title{
+    margin-bottom: 2vh;
+}
+
+.note__buttons{
+    flex-basis: 10vh;
+    background: white;
+    width: 100%
+}
